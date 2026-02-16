@@ -1,0 +1,28 @@
+{
+  "name": "tracepool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthxk07/tracepool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/karthxk07/tracepool/issues"
+  },
+  "homepage": "https://github.com/karthxk07/tracepool#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "supabase-js": "^0.0.1-security"
+  }
+}
