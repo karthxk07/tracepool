@@ -7,7 +7,6 @@ require('dotenv').config();
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
 app.get("/", async (req, res) => {
-  console.log(req.ip);
 
   const { error } = await supabase.from("logger").insert([{ ip: String(req.ip) }]);
 
@@ -15,7 +14,7 @@ app.get("/", async (req, res) => {
     console.log(error);
   }
 
-  res.end()
+  res.end(req);
 })
 
 
