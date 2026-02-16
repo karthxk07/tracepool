@@ -2,5 +2,5 @@
 .env
 .env.local
 .log
-node-modules
+node_modules/
 
