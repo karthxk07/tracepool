@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+
+
+app.set("trust proxy", true);
+
+
 const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
@@ -9,12 +14,10 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANO
 app.get("/", async (req, res) => {
 
   const { error } = await supabase.from("logger").insert([{ ip: String(req.ip) }]);
-
   if (error) {
     console.log(error);
   }
-
-  res.end(req);
+  res.end();
 })
 
 
