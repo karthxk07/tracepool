@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
 
 app.set("trust proxy", true);
 
@@ -17,9 +17,12 @@ app.get("/", async (req, res) => {
   if (error) {
     console.log(error);
   }
-  res.end();
+  res.sendFile(path.join(__dirname, "index.html"));
 })
 
+app.get("/rickroll.gif", (_, res) => {
+  res.sendFile(path.join(__dirname, "rickroll.gif"));
+})
 
 
 app.listen(3000, () => { "server started on port 3000" });
